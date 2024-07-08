@@ -1,8 +1,8 @@
 object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
   Left = 328
   Top = 272
-  Width = 293
-  Height = 222
+  Width = 367
+  Height = 221
   HorzScrollBar.Range = 280
   VertScrollBar.Range = 185
   ActiveControl = EdPassword
@@ -11,8 +11,8 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = 11
-  Font.Name = 'MS Sans Serif'
+  Font.Height = -11
+  Font.Name = 'Segoe UI'
   Font.Pitch = fpVariable
   Font.Style = []
   OldCreateOrder = True
@@ -20,66 +20,9 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Bevel1: TBevel
-    Left = 8
-    Top = 8
-    Width = 271
-    Height = 40
-    Shape = bsFrame
-  end
-  object Bevel2: TBevel
-    Left = 8
-    Top = 53
-    Width = 271
-    Height = 87
-    Shape = bsFrame
-  end
-  object Label1: TLabel
-    Left = 13
-    Top = 3
-    Width = 63
-    Height = 13
-    Caption = 'Database :'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -11
-    Font.Name = 'MS Sans Serif'
-    Font.Pitch = fpVariable
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object lbDBName: TLabel
-    Left = 11
-    Top = 21
-    Width = 263
-    Height = 15
-    AutoSize = False
-    Caption = 'lbDBName'
-  end
-  object Label2: TLabel
-    Left = 16
-    Top = 65
-    Width = 59
-    Height = 13
-    Caption = 'User Name :'
-  end
-  object Label3: TLabel
-    Left = 16
-    Top = 89
-    Width = 52
-    Height = 13
-    Caption = 'Password :'
-  end
-  object Label4: TLabel
-    Left = 16
-    Top = 112
-    Width = 28
-    Height = 13
-    Caption = 'Role :'
-  end
   object Button1: TButton
-    Left = 126
-    Top = 150
+    Left = 192
+    Top = 156
     Width = 75
     Height = 25
     Caption = '&OK'
@@ -88,8 +31,8 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
     TabOrder = 0
   end
   object Button2: TButton
-    Left = 206
-    Top = 150
+    Left = 272
+    Top = 156
     Width = 75
     Height = 25
     Cancel = True
@@ -97,26 +40,70 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
     ModalResult = 2
     TabOrder = 1
   end
-  object EdUserName: TEdit
-    Left = 83
-    Top = 62
-    Width = 179
-    Height = 21
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 345
+    Height = 45
+    Caption = 'GroupBox1'
     TabOrder = 2
+    object lbDBName: TLabel
+      Left = 8
+      Top = 20
+      Width = 329
+      Height = 13
+      AutoSize = False
+      Caption = 'lbDBName'
+    end
   end
-  object EdPassword: TEdit
-    Left = 83
-    Top = 86
-    Width = 179
-    Height = 21
-    PasswordChar = '*'
+  object GroupBox2: TGroupBox
+    Left = 8
+    Top = 56
+    Width = 345
+    Height = 93
     TabOrder = 3
-  end
-  object EdRole: TEdit
-    Left = 83
-    Top = 110
-    Width = 179
-    Height = 21
-    TabOrder = 4
+    object Label2: TLabel
+      Left = 8
+      Top = 16
+      Width = 54
+      Height = 13
+      Caption = 'User name'
+    end
+    object Label3: TLabel
+      Left = 8
+      Top = 40
+      Width = 49
+      Height = 13
+      Caption = 'Password'
+    end
+    object Label4: TLabel
+      Left = 8
+      Top = 64
+      Width = 23
+      Height = 13
+      Caption = 'Role'
+    end
+    object EdUserName: TEdit
+      Left = 80
+      Top = 12
+      Width = 257
+      Height = 21
+      TabOrder = 0
+    end
+    object EdPassword: TEdit
+      Left = 80
+      Top = 36
+      Width = 257
+      Height = 21
+      PasswordChar = '*'
+      TabOrder = 1
+    end
+    object EdRole: TEdit
+      Left = 80
+      Top = 60
+      Width = 257
+      Height = 21
+      TabOrder = 2
+    end
   end
 end

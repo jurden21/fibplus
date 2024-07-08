@@ -33,10 +33,7 @@ uses {$IFDEF D_XE2}Vcl.StdCtrls, Vcl.Controls,
 
 type
   TfrmFIBDBLoginDlg = class(TForm)
-    Bevel1: TBevel;
-    Label1: TLabel;
     lbDBName: TLabel;
-    Bevel2: TBevel;
     Button1: TButton;
     Button2: TButton;
     Label2: TLabel;
@@ -45,6 +42,8 @@ type
     EdUserName: TEdit;
     EdPassword: TEdit;
     EdRole: TEdit;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -68,11 +67,11 @@ uses fib, FIBConsts;
   frmFIBDBLoginDlg:= TfrmFIBDBLoginDlg.Create(nil);
   with frmFIBDBLoginDlg do
   try
-   if Length(ADatabaseName)<=45 then
+   if Length(ADatabaseName)<=60 then
     lbDBName.Caption:= ADatabaseName
    else
-    lbDBName.Caption:=Copy(ADatabaseName,1,10)+'...'+
-      Copy(ADatabaseName,Length(ADatabaseName)-32,MaxInt);
+    lbDBName.Caption := Copy(ADatabaseName, 1, 20) + '...' +
+      Copy(ADatabaseName, Length(ADatabaseName) - 37, MaxInt);
    EdUserName.Text      := AUserName;
    EdRole    .Text      := ARoleName;
    Result:= ShowModal=mrOk;
@@ -90,7 +89,7 @@ uses fib, FIBConsts;
 procedure TfrmFIBDBLoginDlg.FormCreate(Sender: TObject);
 begin
   Caption := SLoginDlgLoginCaption;
-  Label1.Caption := SLoginDlgDatabase;
+  GroupBox1.Caption := SLoginDlgDatabase;
   Label2.Caption := SDBEditUserName;
   Label3.Caption := SDBEditPassword;
   Label4.Caption := SDBEditSQLRole;
